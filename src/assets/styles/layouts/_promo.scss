@@ -1,0 +1,133 @@
+.promo {
+  position: relative;
+  background: 
+   linear-gradient($color-details 277px, $color-dark 277px 100%);
+  color: $color-light;
+  margin-bottom: 100px; 
+  &::after {
+    content: '';
+    z-index: 5;
+    display: block;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: -35px;
+    background: url('./assets/image/promo-background.png') top center / 100% repeat-x;
+  }
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 583px;
+    height: 580px;
+    border: 1px solid #E09990;
+    border-radius: 50%;
+    left: 670px;
+    top: 37px;
+  }
+}
+
+.promo__container {
+  position: relative;
+  @extend %font-additional;
+  border-left: 1px solid $color-light;
+  border-right: 1px solid $color-light;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+}
+
+.promo__wrapper {
+  display: flex;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 37px;
+    left: 0;
+    width: 742px;
+    height: 712px;
+    background: url('./assets/image/promo-background-vector-left.svg') center / contain no-repeat;
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 37px;
+    right: -8px;
+    width: 742px;
+    height: 712px;
+    background: url('./assets/image/promo-background-vector-right.svg') center / contain no-repeat;
+  }
+}
+
+.promo__visual {
+  margin-top: 16px;
+  margin-left: 60px;
+  flex: 1 0 auto;
+}
+
+.promo__image {
+  display: block;
+  width: 409px;
+  height: 422px;
+}
+
+.promo__description {
+    margin-top: 10px;
+  &_large {
+    padding-left: 10px;
+    @extend %font-primary;
+    min-width: 485px;
+    span {
+      position: relative;
+      &:nth-of-type(2) {
+        margin-left: 43px;
+        top: -4px;
+      }
+      &:nth-of-type(3) {
+        top: -8px;
+      }
+      &:last-of-type {
+        display: inline-block;
+        width: 275px;
+        margin-left: 117px;
+        position: relative;
+        top: -13px;
+        &::before {
+          content: '';
+          position: absolute;
+          left: -115px;
+          top: 23px;
+          display: block;
+          width: 33px;
+          height: 36px;
+          background: url('./assets/image/snow-icon.svg') center / cover no-repeat;
+          
+        }
+      }
+      font-size: 30px;
+      line-height: 110%;
+      letter-spacing: -1.8px;
+      text-transform: lowercase;
+    }
+  }
+  &_small {
+    width: 257px;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -1.4px;
+    margin-right: 8px;
+    padding-top: 5px;
+  }
+}
+
+.promo__vector-title {
+  position: relative;
+  left: -2px;
+  margin-top: 20px;
+  height: 254px;
+  img {
+    display: block;
+  }
+}
