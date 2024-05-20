@@ -1,0 +1,32 @@
+.header {
+  background-color: $color-dark;
+  color: $color-light;
+  font-size: 16px;
+  line-height: 110%;
+  letter-spacing: -0.32px;
+  @extend %font-additional;
+}
+
+.header__container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px;
+  padding-right: 0;
+  border-left: 1px solid $color-light ;
+  border-right: 1px solid $color-light ;
+}
+
+.header__logo {
+  height: 55px;
+}
+
+.header__navigation {
+  flex: 0 1 904px;
+}
+
+
+.header__contacts {
+  padding-left: 1px;
+}

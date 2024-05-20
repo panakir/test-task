@@ -1,0 +1,15 @@
+// Abstracts
+@import './assets/styles/abstracts/variables';
+@import './assets/styles/abstracts/placeholders';
+
+// Base
+@import './assets/styles/base/reset';
+@import './assets/styles/base/base';
+@import './assets/styles/base/typography';
+
+// Components
+@import './assets/styles/components/navigation';
+
+// Layouts
+@import './assets/styles/layouts/header';
+@import './assets/styles/layouts/container';
