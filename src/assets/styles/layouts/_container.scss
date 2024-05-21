@@ -2,4 +2,12 @@
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
+  
+  @include media-tablet {
+    max-width: 600px;
+  }
+
+  @include media-mobile {
+    max-width: 300px;
+  }
 }

@@ -1,6 +1,7 @@
 // Abstracts
 @import './assets/styles/abstracts/variables';
 @import './assets/styles/abstracts/placeholders';
+@import './assets/styles/abstracts/mixins';
 
 // Base
 @import './assets/styles/base/reset';
@@ -9,9 +10,11 @@
 
 // Components
 @import './assets/styles/components/navigation';
+@import './assets/styles/components/promo';
+@import './assets/styles/components/intro';
+@import './assets/styles/components/burger';
+
 
 // Layouts
 @import './assets/styles/layouts/header';
 @import './assets/styles/layouts/container';
-@import './assets/styles/layouts/promo';
-@import './assets/styles/layouts/intro';

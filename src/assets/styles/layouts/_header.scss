@@ -4,7 +4,12 @@
   font-size: 16px;
   line-height: 110%;
   letter-spacing: -0.32px;
+  
   @extend %font-additional;
+  @include media-desktop-small {
+    font-size: 14px;
+    letter-spacing: -1.12px;
+  }
 }
 
 .header__container {
@@ -13,19 +18,59 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 0 10px 10px;
-  border-left: 1px solid $color-light ;
-  border-right: 1px solid $color-light ;
+  border-left: 1px solid $color-light;
+  border-right: 1px solid $color-light;
+
+  @include media-tablet {
+    padding: 15px 9px 15px 4px;
+  }
+  @include media-mobile {
+    padding: 10px 6px 10px 5px;
+  }
 }
 
 .header__logo {
+  width: 55px;
   height: 55px;
+
+  @include media-desktop-small {
+    width: 40px;
+    height: 40px;
+  }
+
+  @include media-mobile {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .header__navigation {
   flex: 0 1 904px;
-}
 
+  @include media-desktop {
+    flex:0 1 auto;
+    .navigation__item:not(.navigation__item:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  @include media-tablet {
+    display: none;
+  }
+}
 
 .header__contacts {
   padding-left: 1px;
+
+  @include media-tablet {
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+    justify-content: flex-end;
+  }
+
+  @include media-mobile {
+    font-size: 12px; 
+    letter-spacing: -.96px;
+  }
 }
