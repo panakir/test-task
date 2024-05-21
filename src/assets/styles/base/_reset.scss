@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  @extend %font-primary;
+}
+
 ul {
   list-style-type: none;
 }
