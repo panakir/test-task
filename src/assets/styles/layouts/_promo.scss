@@ -14,17 +14,6 @@
     bottom: -35px;
     background: url('./assets/image/promo/promo-background.png') top center / 100% repeat-x;
   }
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 583px;
-    height: 580px;
-    border: 1px solid #E09990;
-    border-radius: 50%;
-    left: 670px;
-    top: 37px;
-  }
 }
 
 .promo__container {
@@ -33,32 +22,10 @@
   border-left: 1px solid $color-light;
   border-right: 1px solid $color-light;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  height: 750px;
   padding-top: 40px;
-}
-
-.promo__wrapper {
-  display: flex;
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 37px;
-    left: 0;
-    width: 742px;
-    height: 712px;
-    background: url('./assets/image/promo/promo-background-vector-left.svg') center / contain no-repeat;
-  }
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 37px;
-    right: -8px;
-    width: 742px;
-    height: 712px;
-    background: url('./assets/image/promo/promo-background-vector-right.svg') center / contain no-repeat;
-  }
+  background: url('./assets/image/promo/promo-background-l.png') bottom / 100% no-repeat;
 }
 
 .promo__visual {
@@ -103,7 +70,6 @@
           width: 33px;
           height: 36px;
           background: url('./assets/image/promo/snow-icon.svg') center / cover no-repeat;
-          
         }
       }
       font-size: 30px;
