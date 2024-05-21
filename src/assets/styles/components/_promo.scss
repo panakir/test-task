@@ -1,9 +1,13 @@
 .promo {
   position: relative;
-  background: 
-   linear-gradient($color-details 277px, $color-dark 277px 100%);
+  background: linear-gradient($color-details 277px, $color-dark 277px 100%);
   color: $color-light;
   margin-bottom: 150px; 
+
+ @media (max-width: 500px) {
+    background: linear-gradient($color-details 242px, $color-dark 242px 100%);
+  }
+
   &::after {
     content: '';
     z-index: 5;
@@ -13,6 +17,14 @@
     position: absolute;
     bottom: -35px;
     background: url('./assets/image/promo/promo-background.png') top center / 100% repeat-x;
+    
+    @include media-tablet {
+      background: url('./assets/image/promo/tablet/promo-background.png') top center / 100% repeat-x;
+    }
+
+    @media (max-width: 500px) {
+      background: url('./assets/image/promo/mobile/promo-background.png') top center / 100% repeat-x;
+    }
   }
 }
 
@@ -26,34 +38,90 @@
   height: 750px;
   padding-top: 40px;
   background: url('./assets/image/promo/promo-background-l.png') bottom / 100% no-repeat;
-}
 
-.promo__visual {
-  margin-top: 16px;
-  margin-left: 60px;
-  flex: 1 0 auto;
-}
+  @include media-desktop-small {
+    height: 635px;
+  }
 
-.promo__image {
-  display: block;
-  width: 409px;
-  height: 422px;
+  @include media-tablet {
+    height: 896px;
+    background: url('./assets/image/promo/tablet/promo-background-l.png') bottom / 100% no-repeat;
+    gap: 30px;
+  }
+
+  @media (max-width: 500px) {
+    padding-top: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 750px;
+    background: url('./assets/image/promo/mobile/promo-background-l.png') bottom / 100% no-repeat; 
+  }
+
+  @include media-mobile {
+    height: 410px;
+    gap: 0;
+  }
 }
 
 .promo__description {
     margin-top: 10px;
+
   &_large {
+    min-width: 485px;
     padding-left: 10px;
     @extend %font-primary;
-    min-width: 485px;
+    font-size: 30px;
+    line-height: 110%;
+    letter-spacing: -1.8px;
+    text-transform: lowercase;
+
+    @include media-desktop-small {
+      font-size: 25px;
+      padding-left: 5px;
+      padding-top: 6px;
+    }
+
+    @include media-tablet {
+      font-size: 20px;
+      letter-spacing: -1.2px;
+      min-width: 200px;
+    }
+
+    @include media-mobile {
+      font-size: 14px;
+      letter-spacing: -.84px;
+      min-width: 200px;
+      padding-top: 0;
+      padding-left: 4px;
+    }
+
     span {
       position: relative;
       &:nth-of-type(2) {
         margin-left: 43px;
         top: -4px;
+        
+        @include media-tablet {
+          margin-left: 35px;
+          top: -2px;
+        }
+
+        @include media-mobile {
+          margin-left: 24px;
+          top: 0;
+        }
       }
       &:nth-of-type(3) {
         top: -8px;
+
+        @include media-tablet {
+          top: -4px;
+        }
+        
+        @include media-mobile {
+          margin-left: 0;
+          top: 0;
+        }
       }
       &:last-of-type {
         display: inline-block;
@@ -61,6 +129,19 @@
         margin-left: 117px;
         position: relative;
         top: -13px;
+
+        @include media-tablet {
+          width: 250px;
+          margin-left: 90px;
+          top: -5px;
+        }
+
+        @include media-mobile {
+          width: 130px;
+          margin-left: 57px;
+          top: -1px;
+        }
+
         &::before {
           content: '';
           position: absolute;
@@ -70,14 +151,23 @@
           width: 33px;
           height: 36px;
           background: url('./assets/image/promo/snow-icon.svg') center / cover no-repeat;
+          
+          @include media-tablet {
+            background: url('./assets/image/promo/snow-icon.svg') center / 25px 25px no-repeat;
+            left: -91px;
+            top: 12px;
+          }
+
+          @include media-mobile {
+            background: url('./assets/image/promo/snow-icon.svg') center / 20px  no-repeat;
+            left: -61px;
+            top: 2px;
+          }
         }
       }
-      font-size: 30px;
-      line-height: 110%;
-      letter-spacing: -1.8px;
-      text-transform: lowercase;
     }
   }
+
   &_small {
     width: 257px;
     font-size: 20px;
@@ -85,6 +175,25 @@
     letter-spacing: -1.4px;
     margin-right: 8px;
     padding-top: 5px;
+
+    @include media-tablet {
+      padding-top: 6px;
+      font-size: 16px;
+      letter-spacing: -1.12px;
+      width: 170px;
+    }   
+
+     @media (max-width: 500px) {
+       margin-left: auto;
+     }
+
+    @include media-mobile {
+      margin-top: 8px;
+      padding: 0;
+      width: 138px;
+      font-size: 12px;
+      letter-spacing: -.84px;
+    }
   }
 }
 
