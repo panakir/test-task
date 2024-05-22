@@ -5,45 +5,61 @@
 .intro__container {
   display: flex;
   justify-content: space-between;
-  background: url('./assets/image/intro/background.png')  102.5% 133% / 342px 485px  no-repeat;
-}
+  background: url('./assets/image/intro/background.png')  102.5% 133% / 342px 485px  no-repeat, 
+              url('./assets/image/intro/background-small.png') left 10px /249px 177px no-repeat;
 
-.intro__left-side {
-  display: flex;
-  align-items: center;justify-content: center;
-  position: relative;
-  max-width: 250px;
-  width: 100%;
-  height: 200px;
-  
-  img {
-    width: 85px;
-    height: 110px;
+  @media(max-width: 1500px) {
+    background: url('./assets/image/intro/background.png')  102.5% 133% / 342px 485px  no-repeat, 
+                url('./assets/image/intro/background-small.png') left bottom /249px 177px no-repeat;
   }
 
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 8px;
-    width: 250px;
-    height: 177px;
-    background: url('./assets/image/intro/background-brackets.png') center/contain no-repeat;
+  @include media-desktop-small {
+    background: url('./assets/image/intro/background.png')  right 60% / 25%  no-repeat, 
+                url('./assets/image/intro/background-small.png') left bottom /249px 177px no-repeat;
+  }
+
+  @include media-tablet {
+    background: url('./assets/image/intro/background.png')  104.3% 36.2% / 22.7%  no-repeat, 
+                url('./assets/image/intro/background-small.png') 0.5% 84% /25.3% no-repeat;
+  }
+
+  @include media-mobile {
+    background: url('./assets/image/intro/background.png')  107% 34%/33% no-repeat ,
+                url('./assets/image/intro/background-small.png') 0% 85.6%/30.5% no-repeat;
   }
 }
 
-.intro__right-side{
+.intro__right-side {
+  margin-left: auto;
   display: flex;
   padding-bottom: 50px;
   flex-direction: column;
   flex: 0 1 1120px;
+
+  @include media-desktop {
+    flex-basis: 100%;
+  }
+
+  @include media-tablet {
+    width: 100%;
+  }
 }
 
 .intro__heading {
   display: flex;
   flex-direction: column;
-  padding-top: 14px;
+  margin-top: 16px;
   gap: 30px;
+
+   @include media-tablet {
+    margin-top: 13px;
+    padding-left: 2px;
+    gap: 15px;
+   }
+
+   @include media-mobile {
+    padding: 0;
+   }
 }
 
 .intro__title{
@@ -52,8 +68,36 @@
   line-height: 84%;
   letter-spacing: -4.2px;
   text-align: justify;
+
+  @include media-desktop-small {
+     font-size: 50px;
+    }
+
+  @include media-tablet {
+     font-size: 36px;
+     letter-spacing: -1.75px;
+    }
+
+    @include media-mobile {
+      font-size: 20px;
+      letter-spacing: -1px;
+      text-align: initial;
+    }
+
   &::first-letter {
-    margin-left: 379px;
+    margin-left: 377px;
+
+    @include media-desktop {
+      margin-left: 100px;
+    }
+
+    @include media-tablet {
+     margin-left: 200px;
+    }
+
+    @include media-mobile {
+      margin-left: 0;
+    }
   }
 }
 
@@ -65,12 +109,41 @@
   line-height: 110%;
   max-width: 510px;
   width: 100%;
+
+   @include media-tablet {
+    span {
+      display: block;
+    }
+    font-size: 18px;
+    letter-spacing: -.54px;
+    max-width: 305px;
+   }
+
+   @include media-mobile {
+    font-size: 12px;
+    font-weight: 500; 
+    letter-spacing: 0;
+    width: 75%;
+   }
 }
 
 .intro__description{
-  padding-top: 14px;
-  width: 380px;
+  margin-top: 14px;
+  max-width: 380px;
   margin-left: 380px;
+
+  @include media-tablet {
+    text-align-last: left;
+    margin-left: 202px;
+    margin-top: 16px;
+    max-width: 263px;
+  }
+
+  @include media-mobile {
+    margin: 12px 0 0 101px;
+    text-align: inherit;
+    max-width: 165px
+  }
 }
 
 .intro__text {
@@ -78,4 +151,31 @@
   font-size: 20px;
   line-height: 100%;
   letter-spacing: -1.4px;
+
+  span {
+    &:last-of-type {
+      display: block;
+    }
+  }
+
+  @include media-tablet {
+    span {
+      display: block;
+    }
+
+    font-size: 16px;
+    letter-spacing: -1.12px;
+  }
+
+  @include media-mobile {
+    font-size: 12px;
+    letter-spacing: -.84px;
+    span {
+      display: inline;
+
+      &:last-of-type {
+        display: inline;
+      }
+    }
+  }
 }
