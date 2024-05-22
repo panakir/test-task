@@ -1,3 +1,16 @@
 .logo {
   width: 100%;
 } 
+
+body {
+  &.locked {
+    overflow: hidden;
+    padding-right: calc(-1 * (100vh - 100%));
+  }
+}
+
+a {
+  &:hover {
+    color: $color-details;
+  }
+}

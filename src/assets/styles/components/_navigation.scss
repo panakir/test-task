@@ -14,3 +14,31 @@
     }
   }
 }
+
+#burger-menu {
+  .navigation {
+    margin-top: 86px;
+    @include media-mobile {
+      font-size: 20px;
+      letter-spacing: -1px;
+      margin-top: 43px;
+    }
+
+    @extend %font-primary;
+
+    &__list {
+      flex-direction: column;
+      gap: 20px;
+      
+      @include media-mobile {
+        gap: 10px;
+      }
+    }
+
+    &__item {
+      &:not(&:last-child) {
+        margin-right: 0;
+    }
+  }
+  }
+}

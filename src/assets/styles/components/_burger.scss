@@ -1,55 +1,210 @@
 .burger {
   display: none;
+  width: 25px;
+  height: 25px;
   margin-left: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+
   @include media-tablet {
-    display: block;  
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+  }
+
+  @include media-mobile {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
   }
 }
 
 .burger__button {
-  display: block;
-  background-color: $color-light;
+  position: relative;
   width: 25px;
-  height: 2px;
-  cursor: pointer;
+  height: 22px;
 
-  @include media-mobile {
-    width: 16px;
-    height: 1.67px;
-  }
-
-  &::before {
-    content: '';
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: $color-light;
-    top: -10px;
-    
-    @include media-mobile {
-       top: -5px;
-      height: 1.67px;
+  span {
+    position: absolute;
+    top: calc(50% - 1px);
+    &:first-child {
+      top: 0;
+    }
+    &:last-child {
+      top: calc(100% - 2px)
     }
   }
 
-  &::after {
-    content: '';
-    position: relative;
+  @include media-mobile {
+    width: 17px;
+    height: 12px;
+  }
+  
+  span {
     display: block;
     width: 100%;
     height: 2px;
     background-color: $color-light;
-    top: 8px;
+  }
 
-    @include media-mobile {
-      height: 1.67px;
-    top: 3.33px;
-
+  &.active {
+    span {
+      transform: scale(0);
+      &:first-child {
+        transform: rotate(135deg);
+        top: calc(50% - 1px);
+      }
+      &:last-child {
+        transform: rotate(-135deg);  
+        top: calc(50% - 1px);
+      }
     }
   }
 }
 
-.burger__navigation {
-  transform: translateX(100%);
+.burger-menu {
+  width: 100vw;
+  height: 100vh;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: 5;
+  background-color: $color-dark;
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: -2.88px;
+  line-height: 84%;
+
+  
+  @include media-mobile {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  &.show {
+    left: 0;
+  }
+
+  &__visual {
+    margin-top: 74px;
+    width: 120px;
+    height: 120px;
+    background: url('./assets/image/burger-menu/red-snow-icon.svg') center / contain no-repeat;
+
+    @include media-mobile {
+      margin-top: 25px;
+      width: 45px;
+      height: 45px;
+    }
+  }
+}
+
+.burger-menu__footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 21px;
+  width: 100%;
+  margin: 70px 0 ;
+  max-width: 407px;
+  @extend %font-additional;
+  color: $color-light;
+
+  @include media-mobile {
+    margin: 25px 0px;
+  }
+
+  .footer {
+    &__line {
+      gap: 7px;
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__text {
+      font-size: 14px;  
+      line-height: 110%;
+      letter-spacing: -1.12px;
+      margin: 0 7px 0 3px;
+
+      span {
+        display: block;
+      }
+
+      @include media-mobile {
+        font-size: 12px;
+        letter-spacing: -.96px;
+        margin: 0;
+      }
+    }
+
+    &__email {
+      font-size: 35px;  
+      letter-spacing: 0;
+      text-transform: uppercase;
+
+      @include media-mobile {
+        font-size: 26px;
+      }
+    }
+
+    &__socials {
+      display: flex;
+  
+      gap: 15px;
+      margin-right: 8px;
+
+      @include media-mobile {
+        gap: 5px;
+        margin: 0;
+        height: 30px;
+      }
+    }
+  
+    &__social-link {
+      &:hover {
+        background-color: $color-details;
+      }
+      span {
+        display: block;
+        width: 30px;
+        height: 30px;
+      }
+      &_whatsapp {
+        span {
+          background: url('./assets/image/burger-menu/whatsapp-icon.png') center / contain no-repeat;
+        }
+      }
+
+      &_telegram {
+        span {
+          background: url('./assets/image/burger-menu/telegram-icon.png') center / contain no-repeat;
+        }
+      }
+
+      &_2gis {
+        span {
+          background: url('./assets/image/burger-menu/2gis-icon.png') center / contain no-repeat;
+        }
+      }
+
+      &_yandex-map {
+        span {
+          background: url('./assets/image/burger-menu/yandex-map-icon.png') center / contain no-repeat;
+        }
+      }
+    }
+  }
 }

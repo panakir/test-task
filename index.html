@@ -26,19 +26,12 @@
       <div class="header__contacts">
         <a href="tel:+79625873031" class="header__link">8 (962) 587-30-31</a>
       </div> 
-      <div class="burger">
-        <div class="burger__button"></div>
-        <nav class="navigation burger__navigation" hidden>
-        <ul class="navigation__list">
-          <li class="navigation__item"><a href="#" class="navigation__link">O компании</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">Преимущества</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">Услуги</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">Этапы работы</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">FAQ</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link">Каталог</a></li> 
-          <li class="navigation__item"><a href="#" class="navigation__link">Контакты</a></li> 
-        </ul>
-      </nav>
+      <div class="burger" id="burger">
+        <div class="burger__button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   </header>
@@ -71,5 +64,52 @@
     </section>
   </main> 
   <footer class="footer"></footer>
+  <div id="burger-menu" class="burger-menu">
+    <nav class="navigation burger__navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item"><a href="#" class="navigation__link">O компании</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link">Преимущества</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link">Услуги</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link">Этапы работы</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link">FAQ</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link">Каталог</a></li> 
+          <li class="navigation__item"><a href="#" class="navigation__link">Оставить заявку</a></li> 
+          <li class="navigation__item"><a href="#" class="navigation__link">Контакты</a></li> 
+        </ul>
+    </nav>
+    <div class="burger-menu__visual"></div>
+    <footer class="footer burger-menu__footer">
+      <div class="footer__line">
+          <div class="footer__contacts">
+            <p class="footer__text">г. Хабаровск, 
+              <span>
+                с.Тополева, ул.Дачная 8б
+              </span>
+            </p>
+          </div>
+          <div class="footer__contacts">
+            <a class='footer__text' href="tel:+79625873031">8 (962) 587-30-31</a>
+            <a class='footer__text' href="tel:+79141582525">8 (914) 158-25-25</a>
+          </div>
+      </div>
+      <div class="footer__line">
+        <a class="footer__email" href="mailto:artloft27@yandex.ru">artloft27@yandex.ru</a>
+      </div>
+      <div class="footer__line">
+        <div class="footer__info">
+          <p class="footer__text">ИНН: 7000208270</p>
+          <p class="footer__text">КПП: 270001001</p>
+        </div>
+        <div class="footer__socials">
+          <a class="footer__social-link footer__social-link_2gis" href="http://" target="_blank" rel="noopener noreferrer"><span></span></a>
+          <a class="footer__social-link footer__social-link_yandex-map" href="http://" target="_blank" rel="noopener noreferrer"><span></span></a>
+          <a class="footer__social-link footer__social-link_whatsapp" href="http://" target="_blank" rel="noopener noreferrer"><span></span></a>
+          <a class="footer__social-link footer__social-link_telegram" href="http://" target="_blank" rel="noopener noreferrer"><span></span></a>
+          
+        </div>
+      </div>
+      
+    </footer>
+  </div>
 </body>
 </html>
