@@ -5,7 +5,7 @@
 body {
   &.locked {
     overflow: hidden;
-    padding-right: calc(-1 * (100vh - 100%));
+    padding-right: calc(-1 * (100vw - 100%));
   }
 }
 
